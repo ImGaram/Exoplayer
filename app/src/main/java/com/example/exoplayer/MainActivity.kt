@@ -19,6 +19,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setExoplayer()
+        binding.contentUpload.setOnClickListener {
+//            startActivity()
+        }
+    }
+
+    private fun setExoplayer() {
         val mediaItem = MediaItem.fromUri(Uri.parse(sampleUrl))
         player = ExoPlayer.Builder(this)
             .build()
